@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ÄänestysSovellus</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <button id="logoutBtn" style="display:none;">Kirjaudu ulos</button>
+            <button id="createPollBtn" style="display:none;">Luo äänestys</button>
+            <button id="loginBtn">Kirjaudu</button>
+            <button id="registerBtn">Rekisteröidy</button>
+            <p id="infoMessage"></p>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Modalit -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modalTitle"></h2>
+                <form id="modalForm">
+                    <input type="text" id="username" placeholder="Käyttäjätunnus" autocomplete="username">
+                    <input type="password" id="password" placeholder="Salasana" autocomplete="current-password">
+                    
+                                    <!-- RADIO-VALINNAT (vain rekisteröintiin) -->
+                    <div id="roleRadios" style="display:none; margin-top:10px;">
+                        <label>
+                            <input type="radio" name="role" value="user" checked>
+                            Käyttäjä
+                        </label>
+                        <label>
+                            <input type="radio" name="role" value="admin">
+                            Ylläpitäjä
+                        </label>
+                    </div>
+                    <button type="submit" id="submitBtn"></button>
+                </form>
+            </div>
+        </div>
+
+        <div id="pollModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closePoll">&times;</span>
+                <h2>Luo uusi äänestys</h2>
+                <form id="pollForm">
+                    <input type="text" id="pollQuestion" placeholder="Kysymys">
+                    <input type="text" class="pollOption" placeholder="Vaihtoehto 1">
+                    <input type="text" class="pollOption" placeholder="Vaihtoehto 2">
+                    <button type="button" id="addOptionBtn">Lisää vaihtoehto</button>
+                    <button type="submit">Luo äänestys</button>
+                </form>
+            </div>
+        </div>
+    
+        <h1 id="headtext">ÄänestysSovellus</h1>
+        <article id="pollContainer"></article>
+        
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/polls.js"></script>
+</body>
+</html>

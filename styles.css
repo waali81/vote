@@ -1,0 +1,238 @@
+/* Nollaa oletusmarginaalit */
+html, body {
+    margin: 0; /* Oletusmarginaalin nollaus */
+    padding: 0; /* oletuspaddingin nollaus */
+    font-family: Arial, sans-serif; /* fontti */
+    color: #ffffff; /* Vaalea teksti */
+}
+
+body {
+    background: linear-gradient(to bottom, #121212, #2a2a2a); /* Tumma taustagradient */
+    background-repeat: no-repeat; /* Taustan toistumisen estäminen */
+    background-attachment: fixed; /* Taustan kiinnitys */
+}
+
+header {
+    position: fixed; /* Pysyy paikallaan skrollatessa */
+    top: 0; /* Kiinnitetään yläreunaan */
+    left: 0; /* Kiinnitetään vasenpaan reunaan */
+    width: 100%; /* Vie koko leveyden */
+    z-index: 1; /* Varmistaa, että se on muiden elementtien päällä */
+}
+
+/* Navigaatio */
+header nav {
+    display: flex; /* Flexbox asettelu */
+    justify-content: flex-start; /* Kohdistus vasemmalle */
+    align-items: center; /* Pystyyn keskitys */
+    gap: 10px; /* Väli elementeille */
+    padding: 10px 20px;
+    background-color: #1e1e1e; /* Tumma tausta */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Varjostus */
+}
+
+/* Info-teksti */
+#infoMessage {
+    font-size: 16px;
+    margin: 0;
+    font-weight: bold; /* Lihavointi */
+    color: #ffffff;
+}
+
+/* Nappien tyyli */
+button {
+    padding: 6px 12px;
+    border: none; /* Reunuksen poisto */
+    border-radius: 5px; /* Kulmien pyöristys */
+    cursor: pointer; /* Kursorin muutos kädeksi */
+    background-color: #007BFF; /* Sininen nappi */
+    color: white; /* Tekstin väri */
+    font-size: 16px; 
+    transition: background-color 0.2s; /* Siirtymä aika hoverille */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Modalit */
+.modal {
+    display: none; /* Oletuksena piilossa */
+    position: fixed; /* Kiinnitys */
+    z-index: 2; /* Muiden elementtein päälle */
+    left: 0; top: 0; /* Koko ruutu */
+    width: 100%; height: 100%; /* Koko ruutu */
+    overflow: auto; /* Scrollaus tarvittaessa */
+    background-color: rgba(0,0,0,0.8); /* Tumma tausta, läpinäkyvyys */
+}
+
+.modal-content {
+    background-color: #1f1f1f; /* Tumma modal-tausta */
+    margin: 15% auto; /* Keskitys vaakasuunnassa ja tilaa yläreunaan */
+    padding: 20px;
+    border-radius: 10px; /*Kulmien pyöristys */
+    width: 300px; /* Leveys */
+    text-align: center; /* Tekstin keskitys */
+    color: #ffffff; /* Modal-teksti valkoiseksi */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+.close {
+    float: right; /* Sulkemisruksin sijoitus oikeaan reunaan */
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+form input[type="text"],
+form input[type="password"] {
+    font-size: 16px;
+    display: block; /* Koko rivi */
+    width: 90%; /* Inputin leveys */
+    margin: 10px auto; /* Väli pystysuunnassa ja keskitys */
+    padding: 8px;
+    border: 1px solid #333; /* Reunus */
+    border-radius: 5px;
+    background-color: #2b2b2b;
+    color: #ffffff;
+}
+
+form input::placeholder {
+    color: #888; /* Hieman vaalea placeholder */
+}
+
+form button {
+    padding: 8px 16px;
+    margin-top: 16px;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Main-alue */
+main {
+    margin-top: 60px; /* Ylämarginaali */
+    display: flex; /* Felxbox asettelu */
+    justify-content: center; /*Keskitys vaakasuunnassa */
+    gap: 5%; /* Väli sisältöelementtien välillä */
+    align-items: flex-start; /* Kohdistus yläreunaan */
+    padding: 20px;
+}
+
+#headtext {
+    margin-top: 100px;
+    font-size: 4rem;
+    font-weight: bold;
+    flex: 0 0 35%; /* Ei kaasva, ei kutistu, vie 35% leveydestä */
+}
+
+#pollContainer {
+    width: 55%; /* Vie 55% leveydestä */
+}
+
+.poll {
+    background-color: #1e1e1e;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.poll h3 {
+    margin-bottom: 10px;
+}
+
+.poll-option {
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+.poll-bar {
+    display: block;
+    height: 20px; /* Palkin korkeus */
+    background-color: #007BFF;
+    border-radius: 5px;
+    text-align: center;
+    padding-right: 5px;
+    line-height: 20px; /* Rivikorkeus keskittää tekstin pystysuunnassa */
+    color: white;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.poll button {
+    padding: 6px 12px;
+    line-height: 1; /* Rivikorkeus */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s; /* Siirtymä aika */
+    margin-right: 10px;
+}
+
+.poll button:hover {
+    opacity: 0.8; /* Himmennus hoverilla */
+}
+
+.poll button.delete-btn {
+    font-size: 16px;
+    background-color: #FF4B5C;
+    color: white;
+}
+
+/* Äänestysvaihtoehdot */
+.poll-option span:first-child {
+    font-weight: bold; /* Vaihtoehto lihavoitu */
+    font-size: 16px;   /* Vaihtoehdon fonttikoko */
+}
+
+/* Äänten määrä */
+.poll-option .vote-count {
+    font-weight: normal;
+    font-size: 14px;   /* Pienempi fontti kuin vaihtoehdolla */
+    color: #ccc;
+    margin-top: 2px;
+}
+
+/* Äänestysvaihtoehdot */
+.poll-option--vote {
+    margin: 8px 0;
+}
+
+/* Äänestystulokset */
+.poll-option--result {
+    margin: 20px 0;
+}
+
+/* Äänestysvaihtoehto ENNEN äänestystä */
+.poll-option--vote label {
+    font-size: 16px;
+}
+
+/* Responsiivisuus: pienillä näytöillä pinoaminen päällekkäin */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column; /* Asettelu pystysuuntaan */
+        gap: 10px;
+    }
+
+    #headtext {
+        margin-top: 10px;
+        flex: 1 1 auto; /* Kasvaa ja kutistuu tarvittaessa, automaattinen koko */
+        font-size: 28px;
+    }
+
+    #pollContainer {
+        width: 100%; /* Vie koko ruudun leveyden */
+    }
+
+    .poll {
+        max-width: 100%; /* Ei rajoita leveyttä mobiilissa */
+    }
+}
